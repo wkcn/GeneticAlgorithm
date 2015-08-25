@@ -6,7 +6,7 @@ function X = init_population(bound,m)
     n = size(bound,2);
     X = zeros(m,n);
     delta = bound(2,:) - bound(1,:);
-    parfor i = 1:m
+    for i = 1:m
         X(i,:) = rand(1,n) .* delta + bound(1,:);
     end
 end
