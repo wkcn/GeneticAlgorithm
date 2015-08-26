@@ -3,6 +3,6 @@ function X = elitist(X,func,lastBestVal,lastBestX)
 	best = max(f);
 	if best <= lastBestVal
 		[~,i] = min(f);
-		X(i) = lastBestX;
+		X(i,:) = lastBestX';
 	end
 end

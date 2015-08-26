@@ -1,11 +1,11 @@
 function X = crossover(X,p)
-	%We don't use the continuous gene crossover!
+	%We use the continuous gene crossover!
 	[m,n] = size(X);
 	canco = rand(m,1) < p;
     s = 1:m;
 	colist = s(canco);
-	%shuffle
-	colist = shuffle(colist);
+	%shuffle(随机后难以达到较优？)
+	%colist = shuffle(colist);
 	
 	num_pair = floor(length(colist)/2);
     

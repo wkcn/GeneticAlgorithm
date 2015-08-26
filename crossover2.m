@@ -1,5 +1,5 @@
 function X = crossover2(X,p)
-	%We don't use the continuous gene crossover!
+	%don't use continuous gene crossover!
 	[m,n] = size(X);
 	canco = rand(m,1) < p;
     s = 1:m;
