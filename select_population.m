@@ -10,7 +10,7 @@ function newX = select_population(X,f)
     sumFits = sum(fitness);
     gradSum = cumsum(fitness);
     
-    for i = 1:m
+	for i = 1:m
         p = rand() * sumFits;
         k = 1;
 
@@ -18,8 +18,8 @@ function newX = select_population(X,f)
 			if p < gradSum(k)
 				break;
 			end
-		end
-
+        end
+        
         newX(i,:) = X(k,:);
 	end
 

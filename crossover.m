@@ -5,7 +5,7 @@ function X = crossover(X,p)
     s = 1:m;
 	colist = s(canco);
 	%shuffle(随机后难以达到较优？)
-	%colist = shuffle(colist);
+	colist = shuffle(colist);
 	
 	num_pair = floor(length(colist)/2);
     
