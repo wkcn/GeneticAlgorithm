@@ -42,7 +42,7 @@ parfor t = 11:1:99
     if Pm ~= 0
         fprintf('Px = %f Pm = %f\n',Px,Pm);
         for q = 1:10
-            [bestVars,bestVal,avgVal,stdVal] = GA(m,maxGens,Px,Pm,bound,@testFunc2);
+            [bestVars,bestVal,avgVal,stdVal,~] = GA(m,maxGens,Px,Pm,bound,@testFunc2);
             vars(t,:,q) = bestVars';
             val(t,:,q) = [bestVal avgVal stdVal]; 
         end
