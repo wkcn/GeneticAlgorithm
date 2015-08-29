@@ -19,7 +19,7 @@ function newX = select_population(X,f)
 				break;
 			end
         end
-        
+        %fprintf('%d----\n',k);
         newX(i,:) = X(k,:);
 	end
 

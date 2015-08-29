@@ -1,4 +1,4 @@
-function [bestVars,bestVal,avgVal,stdVal] = GA(m,maxGens,Px,Pm,bound,func)
+function [bestVars,bestVal,avgVal,stdVal,genRecord] = GA(m,maxGens,Px,Pm,bound,func)
 %m the num of population
 %maxGens the maximun of the generation
 %Px probability of crossover
@@ -10,7 +10,7 @@ X = init_population(bound,m);
 
 [lastBestVal,lastBestIndex] = max(evaluate(X,func));
 lastBestX = X(lastBestIndex,:)';
-
+genRecord = zeros(maxGens,1);
 for gen = 1:maxGens
     X = select_population(X,func);
 	X = crossover(X,Px);
@@ -19,6 +19,7 @@ for gen = 1:maxGens
 	%fprintf('%d,   %f,%f,%f\n',gen,bestVal,avgVal,stdVal);
     
 	[X,lastBestVal,lastBestX] = elitist(X,func,lastBestVal,lastBestX);
+    genRecord(gen) = lastBestVal;
 end
 
 fprintf('Simulation Completed\n');
